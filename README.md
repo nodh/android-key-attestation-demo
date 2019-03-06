@@ -37,3 +37,10 @@ MDUzMAoGCCqGSM49BAMCA2gAMGUCMQDtPMGkhcrmmUIm0iDXKgtlIGE/27j9e44P
 fJnen8gPP+oiqw/P5tWy59kgcDOEcohbvg==
 -----END CERTIFICATE-----
 ```
+
+Therefore, the key attestation chain of a Pixel 2 device cannot be used for a client-authenticated TLS session:
+``` shell
+openssl x509 -in pixel-2-cert.pem -inform pem -purpose -noout | grep CA
+openssl x509 -in pixel-3-cert.pem -inform pem -purpose -noout | grep CA
+```
+
